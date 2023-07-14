@@ -10,6 +10,7 @@ import {
   Input,
   Stack,
   Text,
+  Image
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 // import { FaGithub } from 'react-icons/fa';
@@ -43,6 +44,9 @@ export const SignUp = () => {
         style={{ backdropFilter: 'blur(10px) saturate(180%)', WebkitBackdropFilter: 'blur(16px) saturate(180%)' }}
         color={'purple.600'}
         >
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <Image src="/rainbow.png" alt="logo" h={'100px'} w={'100px'}/>
+            </div>
             <chakra.h1 fontSize="4xl" mb={8} fontWeight="bold" textAlign="center">
             Sign Up
             </chakra.h1>

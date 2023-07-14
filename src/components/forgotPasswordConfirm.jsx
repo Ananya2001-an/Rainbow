@@ -7,6 +7,7 @@ import {
   FormLabel,
   Input,
   Text,
+  Image
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -62,6 +63,9 @@ export const ForgotPasswordConfirm = () => {
         style={{ backdropFilter: 'blur(10px) saturate(180%)', WebkitBackdropFilter: 'blur(16px) saturate(180%)' }}
         color={'purple.600'}
         >
+        <div style={{display:"flex", justifyContent:"center"}}>
+            <Image src="/rainbow.png" alt="logo" h={'100px'} w={'100px'}/>
+        </div>
         <chakra.h1 fontSize="4xl" mb={8} fontWeight="bold" textAlign="center">
             Password Reset
         </chakra.h1>

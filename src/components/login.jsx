@@ -11,6 +11,7 @@ import {
   Input,
   Stack,
   Text,
+  Image
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom"
@@ -51,6 +52,9 @@ export const Login = () => {
             bg="rgba(255, 255, 255, 0.75)"
             style={{ backdropFilter: 'blur(10px) saturate(180%)', WebkitBackdropFilter: 'blur(16px) saturate(180%)' }}
         >
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <Image src="/rainbow.png" alt="logo" h={'100px'} w={'100px'}/>
+            </div>
             <chakra.h1 fontSize="4xl" mb={8} fontWeight="bold" textAlign="center" color="purple.600">
             Login to Rainbow
             </chakra.h1>
