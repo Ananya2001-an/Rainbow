@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <>
-        {/* {currentUser?  */}
+        {currentUser? 
         <Box bgGradient="linear-gradient(90.7deg, rgb(255, 253, 218) 1.9%, rgb(246, 210, 255) 39.3%, rgb(152, 222, 254) 64.7%, rgb(251, 255, 210) 100.8%)
         " minHeight={'100vh'}>
             <div style={{display:"flex"}}>
@@ -19,9 +19,9 @@ const Home = () => {
                 </div>
             </div>
         </Box>
-         {/* :
+        :
         <Navigate to="/login" />
-        } */}
+        }
         </>
     );
 }

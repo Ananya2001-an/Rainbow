@@ -12,7 +12,6 @@ export function useAuth(){
 
 export function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState(null)
-    const [profile, setProfile] = useState(null)
     const navigate = useNavigate()
     const toast = useToast()
 
@@ -96,7 +95,6 @@ export function AuthProvider({children}) {
         .then(
             function (response) {
                 setCurrentUser(null);
-                navigate('/login');
                 toast({
                     title: "Logged out!",
                     status: "success",
