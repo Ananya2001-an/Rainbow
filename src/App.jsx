@@ -6,6 +6,8 @@ import {ForgotPassword} from './pages/forgotPassword'
 import {ForgotPasswordConfirm} from './pages/forgotPasswordConfirm'
 import {Profile} from './pages/profile'
 import {Explore} from './pages/explore'
+import {Chats} from './pages/chats'
+import {ChatView} from './pages/chatView'
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element = {<Home />}>
           <Route index element={<Explore/>}/>
-          <Route path='profile/:id' element={<Profile/>}/>
+          <Route path='profile/edit/:id' element={<Profile/>}/>
+          <Route path='chats' element={<Chats/>}/>
+          <Route path='chats/view' element={<ChatView/>}/>
         </Route>
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/login" element={<Login/>} />
