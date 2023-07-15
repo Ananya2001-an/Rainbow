@@ -27,23 +27,6 @@ a {
   text-decoration: none;
 }
 
-.react-datepicker__input-container input {
-  padding: 8px;
-  background-color: rgb(34, 34, 34);
-  border-radius: 8px;
-  border: 1px solid rgb(80, 80, 80);
-}
-
-.react-datepicker__input-container input::placeholder {
-  color: rgb(116, 116, 116);
-}
-
-.react-datepicker__time-list-item--selected,
-.react-datepicker__day--selected {
-  background-color: #48bb78 !important;
-  color: #fff;
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -52,20 +35,19 @@ a {
   text-align: center;
 }
 
-.react-datepicker__triangle {
-  display: none !important;
-}
-
 code {
   background-color: #111 !important;
 }
 
-.bullet-list ul {
-  padding-left: 0;
-  margin-left: 0;
+input[type="file"] {
+    display: none;
 }
 
-.bullet-list ul li {
-  list-style: disc;
-  margin-left: 1.25em;
+.custom-avatar-upload{
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 10px;
 }

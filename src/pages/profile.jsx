@@ -74,10 +74,10 @@ export const Profile = () => {
 
     const handleAvatar = () => {
         storage.createFile(BUCKET_ID, ID.unique(), avatarRef.current.files[0])
-        .then(function (response) {
+        .then(async function (response) {
             const updatedAvavtar = {"avatar": response?.$id}
             try{
-                setProfile(databases.updateDocument(DATABASE_ID, COLLECTION_ID, profile.$id, updatedAvavtar))
+                setProfile(await databases.updateDocument(DATABASE_ID, COLLECTION_ID, profile.$id, updatedAvavtar))
                 toast({
                     title: "Avatar updated successfully!",
                     status: "success",
@@ -208,7 +208,10 @@ export const Profile = () => {
         <div style={{display:"flex", height:"70vh"}}>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:'20px', marginRight:"100px"}}>
                 <Avatar size="2xl" name={currentUser?.name} src={avatar} />
-                <Input mt={3} type="file" ref={avatarRef} onChange={handleAvatar}/>
+                <label for="avatar-upload" className="custom-avatar-upload">
+                    <Input id="avatar-upload" mt={3} type="file" ref={avatarRef} onChange={handleAvatar} />
+                    <AiFillCamera color='black' fontSize={'25px'}/>
+                </label>
                 <chakra.h1 fontSize="4xl" fontWeight="bold" textAlign="center" color="purple.600">
                 {currentUser?.name.toUpperCase()}
                 </chakra.h1>

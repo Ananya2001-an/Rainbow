@@ -1,7 +1,7 @@
 import {
   Box,
   chakra,
-  Flex,
+  Button,
   HStack,
   Image,
   Text,
@@ -30,48 +30,59 @@ export const Sidebar = () => {
         color={'purple.600'}
       >
         <VStack spacing={8} align="start" w="100%">
-          <button onClick={() => navigate('/')} mb={4} _hover={{ textDecoration: 'none' }}>
+          <button onClick={() => navigate('/')} mb={4}>
             <Text fontSize="2xl" fontWeight="bold" color="purple.600" style={{display:'flex', justifyContent:"space-between", alignItems:"center"}}>
               Rainbow
               <Image w='10' h='10' marginLeft={'3'} src="/rainbow.png" alt="logo" />
             </Text>
           </button>
-          <button
+          <Button
              onClick={() => navigate('/')}
-            _hover={{ color: 'purple.800' }}
+            _hover={{ color: 'purple.700' }}
+             color={'purple.600'}
+             _focus={{ bg: 'purple.200', color: 'purple.800' }}
+             background={'none'}
           >
             <HStack spacing={4} alignItems="center" w="100%">
               <AiFillHome size={24} />
               <chakra.span>Explore</chakra.span>
             </HStack>
-          </button>
-          <button
+          </Button>
+          <Button
               onClick={() => navigate(`/profile/${currentUser.$id}`)}
-              _hover={{ color: 'purple.800' }}
+              _hover={{ color: 'purple.700' }}
+              color={'purple.600'}
+              _focus={{ bg: 'purple.200', color: 'purple.800' }}
+              background={'none'}
           >
             <HStack spacing={4} alignItems="center" w="100%">
                 <AiOutlineProfile size={24} />
               <chakra.span>Profile</chakra.span>
             </HStack>
-          </button>
-          <button
-             onClick={() => navigate('/')}
-            _hover={{ color: 'purple.800' }}
+          </Button>
+          <Button
+              onClick={() => navigate('/')}
+              _hover={{ color: 'purple.700' }}
+              color={'purple.600'}
+              _focus={{ bg: 'purple.200', color: 'purple.800' }}
+              background={'none'}
           >
             <HStack spacing={4} alignItems="center" w="100%">
                 <AiFillWechat size={24} />
               <chakra.span>Chats</chakra.span>
             </HStack>
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={() => handleLogout()}
-            _hover={{ color: 'purple.800' }}
+            _hover={{ color: 'purple.700' }}
+            color={'purple.600'}
+            background={'none'}
           >
             <HStack spacing={4} alignItems="center" w="100%">
                 <AiOutlineLogout size={24} />
               <chakra.span>Logout</chakra.span>
             </HStack>
-          </button>
+          </Button>
         </VStack>
       </Box>
   );
