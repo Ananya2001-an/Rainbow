@@ -8,7 +8,6 @@ import { ChakraProvider } from '@chakra-ui/react'
 import theme from '../theme'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <ChakraProvider theme={theme}>
@@ -16,5 +15,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ChakraProvider>
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
 )
