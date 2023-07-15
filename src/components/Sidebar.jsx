@@ -49,7 +49,7 @@ export const Sidebar = () => {
             </HStack>
           </Button>
           <Button
-              onClick={() => navigate(`/profile/${currentUser.$id}`)}
+              onClick={() => navigate(`/profile/edit/${currentUser.$id}`)}
               _hover={{ color: 'purple.700' }}
               color={'purple.600'}
               _focus={{ bg: 'purple.200', color: 'purple.800' }}
@@ -61,7 +61,7 @@ export const Sidebar = () => {
             </HStack>
           </Button>
           <Button
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/chats')}
               _hover={{ color: 'purple.700' }}
               color={'purple.600'}
               _focus={{ bg: 'purple.200', color: 'purple.800' }}

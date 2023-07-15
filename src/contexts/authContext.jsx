@@ -3,6 +3,7 @@ import { account, databases } from '../utils/appwrite'
 import { ID } from "appwrite"
 import { useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
+import { useLocation } from 'react-router-dom'
  
 const AuthContext = React.createContext()
 
@@ -31,7 +32,7 @@ export function AuthProvider({children}) {
                         "user": response.$id,
                         "links": '{"github":"","linkedin":"","twitter":"","instagram":"", "youtube":""}'
                         }
-                        databases.createDocument(import.meta.env.VITE_APPWRITE_DATABASE_ID, import.meta.env.VITE_APPWRITE_COLLECTION_ID, ID.unique(), profile)
+                        databases.createDocument(import.meta.env.VITE_APPWRITE_DATABASE_ID, import.meta.env.VITE_APPWRITE_COLLECTION_PROFILES_ID, ID.unique(), profile)
                         toast({
                             title: "Account created!",
                             status: "success",
@@ -95,6 +96,7 @@ export function AuthProvider({children}) {
         .then(
             function (response) {
                 setCurrentUser(null);
+                navigate('/login');
                 toast({
                     title: "Logged out!",
                     status: "success",

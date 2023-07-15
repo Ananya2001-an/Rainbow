@@ -10,7 +10,7 @@ import { databases, storage } from "../utils/appwrite";
 import { Query, AppwriteException, ID } from "appwrite";
 
 const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
-const COLLECTION_ID = import.meta.env.VITE_APPWRITE_COLLECTION_ID;
+const COLLECTION_ID = import.meta.env.VITE_APPWRITE_COLLECTION_PROFILES_ID;
 const BUCKET_ID = import.meta.env.VITE_APPWRITE_BUCKET_ID;
 
 export const Profile = () => {
@@ -208,7 +208,7 @@ export const Profile = () => {
         <div style={{display:"flex", height:"70vh"}}>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", padding:'20px', marginRight:"100px"}}>
                 <Avatar size="2xl" name={currentUser?.name} src={avatar} />
-                <label for="avatar-upload" className="custom-avatar-upload">
+                <label htmlFor="avatar-upload" className="custom-avatar-upload">
                     <Input id="avatar-upload" mt={3} type="file" ref={avatarRef} onChange={handleAvatar} />
                     <AiFillCamera color='black' fontSize={'25px'}/>
                 </label>

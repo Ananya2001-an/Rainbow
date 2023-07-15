@@ -16,7 +16,7 @@ import {
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../contexts/authContext"
-// import { FaGithub } from 'react-icons/fa';
+import { account } from '../utils/appwrite';
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -24,18 +24,12 @@ export const Login = () => {
     const [error, setError] = useState('');
     const {login} = useAuth();
     const navigate = useNavigate();
-    //   const [loading, setLoading] = useState(false);
-    //   const [githubLoading, setGithubLoading] = useState(false);
-    //   useEffect(() => {
-    //     if (currentUser) {
-    //       setGithubLoading(true);
-    //       setLoading(false);
-    //       router.push('/');
-    //     }
-    //   }, [currentUser, router]);
+
+    useEffect(() => {
+        account.deleteSession('current');
+    }, []);
 
     const handleSignin = () => {
-        // setLoading(true);
         login(email, password);
     };
 
