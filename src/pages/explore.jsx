@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { AiFillEye, AiOutlineSearch, AiOutlineSend } from "react-icons/ai";
 import { databases, storage } from "../utils/appwrite";
 import { Query } from "appwrite";
-import {Input, InputGroup, InputLeftElement, InputRightElement, Button, Tabs, Tab, TabList, Card, SimpleGrid, Box, Avatar, CardBody, CardFooter, CardHeader, Heading, Text, VStack} from "@chakra-ui/react"
+import {Input, InputGroup, InputLeftElement, InputRightElement, Button, Tabs, Tab, TabList, Card, SimpleGrid, Avatar, CardBody, CardFooter, CardHeader, Heading, Text, VStack} from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
 
@@ -81,11 +81,17 @@ export const Explore = () => {
     return(
     <>
     <VStack height={"100vh"} p={8}>
+
+    <Heading alignSelf={'start'} color={'purple.600'} bg="rgba(255, 255, 255, 0.75)" style={{ backdropFilter: 'blur(10px) saturate(180%)', WebkitBackdropFilter: 'blur(16px) saturate(180%)' }} rounded={'3xl'} p={4}>
+        Welcome to Rainbow! 🌈🦄🙌💗🏳️‍🌈😍
+    </Heading>    
+    
+    <p style={{fontSize:"15px", marginBottom:"20px", alignSelf:"start"}}>👉 This community believes in diversity! Connect and spread 💖</p>
+
     <InputGroup>
         <InputLeftElement pointerEvents="none" children={<AiOutlineSearch/>}/>
-        <Input focusBorderColor="purple.600" type="text" placeholder="Search profiles" value={search} onChange={(e) => setSearch(e.target.value)}/>
-        <InputRightElement children={<Button onClick={() => handleSearch()} bg={'none'} _hover={{color:"purple.600"}} size={20}><AiOutlineSend/></Button>
-}/>
+        <Input focusBorderColor="purple.600" type="text" placeholder="Search profiles by names" value={search} onChange={(e) => setSearch(e.target.value)}/>
+        <InputRightElement children={<Button onClick={() => handleSearch()} bg={'none'} _hover={{color:"purple.600"}} size={20}><AiOutlineSend/></Button>}/>
     </InputGroup>
     
     <Tabs variant='soft-rounded' colorScheme='purple'>
