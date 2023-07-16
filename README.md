@@ -4,18 +4,20 @@ It's a Linktree alternative for people of marginalized genders.
 
 ![Screenshot](https://github.com/Ananya2001-an/Rainbow/assets/55504616/7c8b9db4-dfda-47df-b549-57ff377bc1fb)
 
-## Features
+> This project was originally made for the TechTogether Online hackathon hosted by MLH. You can find the project details [here](https://devpost.com/software/rainbow-fhuw7r)
+
+## Features 💫
 - You can create a profile with your name, identity, social media links, etc.
 - You can add a profile picture.
 - You can see other people's profiles.
 - You can chat with other people in realtime.
 
-## Tech Stack
+## Tech Stack ⚒️
 - Uses **Appwrite Cloud** for authentication, database, storage and realtime
 - Uses **Chakra UI** for styling
 - Uses **React** for frontend (Vite)
 
-## Development
+## Development 👩‍💻
 
 1. Fork this repository
 2. After cloning your fork, run `npm install`
