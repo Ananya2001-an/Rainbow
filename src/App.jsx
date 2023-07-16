@@ -16,6 +16,7 @@ function App() {
         <Route path="/" element = {<Home />}>
           <Route index element={<Explore/>}/>
           <Route path='profile/edit/:id' element={<Profile/>}/>
+          {/* <Route path='profile/view/:id' element={<ProfileView/>}/> */}
           <Route path='chats' element={<Chats/>}/>
           <Route path='chats/view' element={<ChatView/>}/>
         </Route>
