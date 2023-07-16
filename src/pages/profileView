@@ -1,0 +1,68 @@
+import React, { useEffect, useState } from 'react'
+import { useAuth } from '../contexts/authContext'
+import { useLocation } from 'react-router-dom'
+import { VStack, useToast, Box, InputGroup, Input, Button, HStack, Avatar, IconButton, InputRightElement } from '@chakra-ui/react'
+import { databases, client, storage } from '../utils/appwrite'
+import Picker from '@emoji-mart/react'
+import { AiFillSmile } from 'react-icons/ai'
+
+const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID
+const COLLECTION_ID = import.meta.env.VITE_APPWRITE_COLLECTION_CHATS_ID
+const BUCKET_ID = import.meta.env.VITE_APPWRITE_BUCKET_ID
+
+export const ProfileView = () => {
+    const {currentUser} = useAuth();
+    const [profile, setProfile] = useState(null);    
+    const toast = useToast()
+    const avatarRef = useRef()
+    let { doc } = location.state
+    const { bio, identity, user, skills, links, avatar } = doc
+    const [bios, setBio] = useState('')
+    const [identities, setIdentity] = useState('')
+    const [users, setUser] = useState('');
+    const [avatars, setavatar] = useState('');
+
+    useEffect(() => {
+        try{    
+            databases.listDocuments(DATABASE_ID, COLLECTION_ID, [Query.equal("user", currentUser?.$id)])
+            .then((response) => {
+                if(response.documents.length < 0){
+                    toast({
+                        title: "Profile not found",
+                        status: "error",
+                        duration: 3000,
+                        isClosable: true,
+                        })
+                    return
+                }
+                setProfile(response.documents[0])
+                const links = JSON.parse(response.documents[0].links)
+                setGithub(links.github)
+                setTwitter(links.twitter)
+                setLinkedin(links.linkedin)
+                setInstagram(links.instagram)
+                setYoutube(links.youtube)
+                setBio(response.documents[0].bio)
+                setSkills(response.documents[0].skills.join(','))
+                const {href} = storage.getFilePreview(BUCKET_ID, response.documents[0].avatar)
+                setAvatar(href)
+            }
+        )}
+        catch(AppwriteException){
+            console.log(AppwriteException)
+            toast({
+                title: "Error fetching profile",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            })
+        }
+    }, [])
+
+    
+
+    return (
+        <></>
+
+    )
+}
