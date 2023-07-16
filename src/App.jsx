@@ -8,6 +8,7 @@ import {Profile} from './pages/profile'
 import {Explore} from './pages/explore'
 import {Chats} from './pages/chats'
 import {ChatView} from './pages/chatView'
+import {ProfileView} from './pages/profileView'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element = {<Home />}>
           <Route index element={<Explore/>}/>
           <Route path='profile/edit/:id' element={<Profile/>}/>
-          {/* <Route path='profile/view/:id' element={<ProfileView/>}/> */}
+          <Route path='profile/view/:id' element={<ProfileView/>}/>
           <Route path='chats' element={<Chats/>}/>
           <Route path='chats/view' element={<ChatView/>}/>
         </Route>
