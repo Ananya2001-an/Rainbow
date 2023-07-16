@@ -30,6 +30,7 @@ export function AuthProvider({children}) {
                     try{
                         const profile = {
                         "user": response.$id,
+                        "user_name": response.name,
                         "links": '{"github":"","linkedin":"","twitter":"","instagram":"", "youtube":""}'
                         }
                         databases.createDocument(import.meta.env.VITE_APPWRITE_DATABASE_ID, import.meta.env.VITE_APPWRITE_COLLECTION_PROFILES_ID, ID.unique(), profile)
